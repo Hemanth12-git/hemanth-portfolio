@@ -40,11 +40,12 @@
    * Scrolls to an element with header offset
    */
   const scrollto = (el) => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    })
+  let element = document.querySelector(el)
+  if(element) {
+    element.scrollIntoView({ behavior: 'smooth' })
   }
+}
+
 
   /**
    * Mobile nav toggle
