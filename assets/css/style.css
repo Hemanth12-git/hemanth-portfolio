@@ -1206,12 +1206,12 @@ section .container {
 .download-btn:before {
   content: "";
   position: absolute;
-  width: 0;
+  width: 40px;
   height: 2px;
   bottom: 4px;
   left: 0;
   background-color: #0069ff; /* same blue underline */
-  visibility: hidden;
+  visibility: visible;
   transition: all 0.3s ease-in-out;
 }
 
@@ -1230,3 +1230,46 @@ section .container {
 .header-top .download-resume-container {
   display: none;
 }
+
+button.download-btn {
+  all: unset;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #000;
+  cursor: pointer;
+  display: inline-block;
+    padding: 8px 18px;
+
+  padding-left:0px;
+  padding-right:0px;
+  border-radius: 0.7rem;
+  position: relative;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  text-align: center;
+  user-select: none;
+}
+
+button.download-btn:before {
+  content: "";
+  position: absolute;
+  width: 40px; /* small line initially */
+  height: 2px;
+  bottom: 4px;
+  left: 0;
+  background-color: #0069ff;
+  visibility: visible;
+  transition: all 0.3s ease-in-out;
+}
+
+button.download-btn:hover,
+button.download-btn:focus {
+  background-color: #e6f0ff;
+  color: #0069ff;
+}
+
+button.download-btn:hover:before,
+button.download-btn:focus:before {
+  width: 100%;
+}
+
