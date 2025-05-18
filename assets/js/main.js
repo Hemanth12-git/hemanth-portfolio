@@ -40,20 +40,27 @@
    * Scrolls to an element with header offset
    */
   const scrollto = (el) => {
-  let element = document.querySelector(el);
-  if (element) {
-    const headerOffset = 100; 
-    const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
-    const offsetPosition = elementPosition - headerOffset;
+    console.log(`scrollto called with: ${el}`);
+    
+    let element = document.querySelector(el);
+    console.log('Found element:', element);
 
-    window.scrollTo({
-      top: offsetPosition,
-      behavior: "smooth"
-    });
+    if (element) {
+      const headerOffset = 100;
+      const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+      const offsetPosition = elementPosition - headerOffset;
+
+      console.log('Element position:', elementPosition);
+      console.log('Offset position:', offsetPosition);
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
+    } else {
+      console.warn(`Element not found for selector: ${el}`);
+    }
   }
-}
-
-
 
   /**
    * Mobile nav toggle
